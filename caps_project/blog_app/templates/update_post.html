@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} Update your blog {% endblock %}
+
+{% block content %}
+
+    <h1>Edit YOUR BLOG</h1>
+    <br><br>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <!-- Using django's form to make create blog post form !-->
+
+        {{ form.as_p }}
+        <button class="btn btn-secondary">Post</button>
+
+
+    </form>
+
+{% endblock %}
