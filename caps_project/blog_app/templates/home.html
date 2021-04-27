@@ -5,6 +5,17 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+<h1>Post</h1>
+
+<ul>
+    {% for i in object_list %}
+        <li>
+            <a href="{% url 'article-detail' i.pk %}">{{ i.title }} </a>
+        </li>
+        <li>{{ i.author }}</li>
+        <li>{{ i.body }}</li><br>
+
+    {% endfor %}
+</ul>
 </body>
 </html>

@@ -43,7 +43,7 @@ ROOT_URLCONF = 'caps_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['blog_app/templates'],
+        'DIRS': ['blog_app/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
