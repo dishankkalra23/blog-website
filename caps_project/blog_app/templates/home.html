@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-<h1>Post</h1>
+{% extends 'base.html' %}
 
+{% block content %}
 <ul>
+
+    <h1>POSTS</h1>
+    <br>
     {% for i in object_list %}
         <li>
             <a href="{% url 'article-detail' i.pk %}">{{ i.title }} </a>
@@ -17,5 +14,4 @@
 
     {% endfor %}
 </ul>
-</body>
-</html>
+{% endblock %}

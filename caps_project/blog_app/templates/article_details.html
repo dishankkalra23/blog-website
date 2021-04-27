@@ -1,18 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Detail View</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-{{ i.body }}
+{% block title %} You have opened {{ i.title }} {% endblock %}
+{% block content %}
 
-</body>
+    <h1></h1>
+    <small>
+        By: {{ i.author.first_name }} {{ i.author.last_name }}
+    </small>
+    <hr>
+    <br>
+    {{ i.body }}
 
-<br>
-<a href="{% url 'home' %}">Back </a>
 
-</html>
+    <br><br>
+    <a href="{% url 'home' %}" class="btn btn-secondary">Back </a>
 
+
+{% endblock %}
 
