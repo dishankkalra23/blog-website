@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
-{% block title %} You have opened {{ i.title }} {% endblock %}
+{% block title %} You have opened {{ post.title }} {% endblock %}
 {% block content %}
 
     <h1></h1>
     <small>
-        By: {{ i.author.first_name }} {{ i.author.last_name }}
+        By: {{ post.author.first_name }} {{ post.author.last_name }}
     </small>
     <hr>
     <br>
-    {{ i.body }}
+    {{ post.body }}
 
 
     <br><br>
