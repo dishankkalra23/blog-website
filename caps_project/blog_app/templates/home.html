@@ -5,12 +5,12 @@
 
     <h1>POSTS</h1>
     <br>
-    {% for i in object_list %}
+    {% for post in object_list %}
         <li>
-            <a href="{% url 'article-detail' i.pk %}">{{ i.title }} </a>
+            <a href="{% url 'article-detail' post.pk %}">{{ post.title }} </a>
         </li>
-        <li>{{ i.author }}</li>
-        <li>{{ i.body }}</li><br>
+        <li>{{ post.author }}</li>
+        <li>{{ post.body }}</li><br>
 
     {% endfor %}
 </ul>
