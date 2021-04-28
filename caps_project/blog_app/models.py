@@ -13,4 +13,8 @@ class Post(models.Model):
         return self.title + '|' + str(self.author)
 
     def get_absolute_url(self):
+        """
+        get_absolute_url: After updating/editing/adding blog takes back to home.url
+        return: home page
+        """
         return reverse('home')
