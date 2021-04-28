@@ -5,7 +5,15 @@
 
     <h1>{{ post.title }}</h1>
     <small>
-        {{ post.author.first_name }} {{ post.author.last_name }} <small><a href="{% url 'update-post' post.pk %}">(Edit) </a> </small>
+        {{ post.author.first_name }} {{ post.author.last_name }}
+
+        {% if user.is_authenticated %}
+            <small><a href="{% url 'update-post' post.pk %}">(Edit) </a> </small>
+
+        {% else %}
+            <br>
+            <strong>Please Login if you want to edit your blog</strong>
+        {% endif %}
         <br>
         {{ post.post_date }}
     </small>
