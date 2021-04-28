@@ -26,18 +26,30 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'add_post' %}">Create Blog Post</a>
-                </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'register' %}">Register</a>
-                </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'add_post' %}">Create Blog Post</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Login</a>
-                    # Login URL is present in user.auth.contrib present inside main urls.py file
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                        {#                    Logout URL is present in user.auth.contrib present inside main urls.py file#}
+                    </li>
+
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                        {#                    Login URL is present in user.auth.contrib present inside main urls.py file#}
+                    </li>
+
+                {% endif %}
+
+
             </ul>
         </div>
     </div>
