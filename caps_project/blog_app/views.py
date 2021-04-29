@@ -4,13 +4,13 @@ from .models import Post
 from django.urls import reverse_lazy
 
 
-
 # Class Based Views
 class HomeView(ListView):
     model = Post
     template_name = 'home.html'
     # ordering = '-id'
     ordering = ['-post_date']
+
 
 class ArticleDetailView(DetailView):
     model = Post
@@ -20,7 +20,7 @@ class ArticleDetailView(DetailView):
 class AddPostView(CreateView):
     model = Post
     template_name = 'add_post.html'
-    fields = ('title', 'author', 'body')
+    fields = ('title', 'author', 'body', 'header_image')
 
 
 class UpdatePostView(UpdateView):
