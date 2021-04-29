@@ -8,7 +8,9 @@
         {{ post.author.first_name }} {{ post.author.last_name }}
 
         {% if user.is_authenticated %}
-            <small><a href="{% url 'update-post' post.pk %}">(Edit) </a> </small>
+            {% if user.id == post.author_id %}
+                <small><a href="{% url 'update-post' post.pk %}">(Edit) </a> </small>
+            {% endif %}
 
         {% else %}
             <br>

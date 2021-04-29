@@ -16,10 +16,11 @@
             <li>{{ post.body|slice:":125" }}</li>
 
             {% if user.is_authenticated %}
+                {% if user.id == post.author_id %}
                 <small><a href="{% url 'update-post' post.pk %}">(Edit) </a> <span
                         style="width:7px;display:inline-block"></span>
                     <a href="{% url 'delete-post' post.pk %}">(Delete) </a> </small>
-
+                {% endif %}
 
             {% endif %}
             <br><br>

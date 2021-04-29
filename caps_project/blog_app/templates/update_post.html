@@ -4,21 +4,26 @@
 {% block content %}
 
     {% if user.is_authenticated %}
-    <h1>Edit YOUR BLOG</h1>
-    <br><br>
 
-    <form method="POST">
-        {% csrf_token %}
+        {% if user.id == post.author_id %}
+            <h1>Edit YOUR BLOG</h1>
+            <br><br>
 
-        <!-- Using django's form to make create blog post form !-->
+            <form method="POST">
+                {% csrf_token %}
 
-        {{ form.as_p }}
-        <button class="btn btn-secondary">Post</button>
+                <!-- Using django's form to make create blog post form !-->
+
+                {{ form.as_p }}
+                <button class="btn btn-secondary">Update</button>
 
 
-    </form>
-
+            </form>
         {% else %}
+            <strong>You can't update others blog</strong>
+
+        {% endif %}
+    {% else %}
         <br>
         <strong>Please Login to edit your blog</strong>
     {% endif %}
