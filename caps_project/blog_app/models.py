@@ -28,6 +28,10 @@ class Post(models.Model):
     # Uploading images in automatically generated directories 'images/'
     header_image = models.ImageField(null=True, blank=True, upload_to="images/")
     category = models.CharField(max_length=255)
+    # num_field = models.IntegerField(max_length=3)
+    reading_type_professional = models.BooleanField(default=True)
+    writer_type = models.TextField(null=True)
+    float_field = models.FloatField(null=True)
 
     def __str__(self):
         return self.title + '|' + str(self.author)
