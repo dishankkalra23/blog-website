@@ -9,14 +9,21 @@
 
 
         <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
+            <div class="form-group">
+                {% csrf_token %}
 
-            <!-- Using django's form to make create blog post form !-->
+                <!-- Using django's form to make create blog post form !-->
+                {{ form.as_p }}
+                <button class="btn btn-secondary">Post</button>
 
-            {{ form.as_p }}
-            <button class="btn btn-secondary">Post</button>
+            </div>
 
+            <script>
 
+                var name = '{{ user.id }}';
+                document.getElementById('pass').placeholder = name;
+
+            </script>
         </form>
 
     {% else %}

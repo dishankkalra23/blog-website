@@ -8,17 +8,19 @@
         {% if user.id == post.author_id %}
             <h1>Edit YOUR BLOG</h1>
             <br><br>
+            <div class="form-group">
+                <form method="POST">
+                    {% csrf_token %}
 
-            <form method="POST">
-                {% csrf_token %}
+                    <!-- Using django's form to make create blog post form !-->
 
-                <!-- Using django's form to make create blog post form !-->
-
-                {{ form.as_p }}
-                <button class="btn btn-secondary">Update</button>
+                    {{ form.as_p }}
+                    <button class="btn btn-secondary">Update</button>
 
 
-            </form>
+                </form>
+
+            </div>
         {% else %}
             <strong>You can't update others blog</strong>
 

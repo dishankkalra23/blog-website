@@ -9,23 +9,25 @@
             <hr>
             <br>
 
-            <form method="POST">
-                {% csrf_token %}
+            <div class="form-group">
+                <form method="POST">
+                    {% csrf_token %}
 
-                <!-- Using django's form to make create blog post form !-->
+                    <!-- Using django's form to make create blog post form !-->
 
-                You are deleting your blog
-                <br><br>
-                Title: <strong>{{ post.title }}</strong>
-                <br>
-                Body: <strong>{{ post.body }}</strong>
-                <br><br>
+                    You are deleting your blog
+                    <br><br>
+                    Title: <strong>{{ post.title }}</strong>
+                    <br>
+                    Body: <strong>{{ post.body }}</strong>
+                    <br><br>
 
-                {{ form.as_p }}
-                <button class="btn btn-secondary">Delete Post</button>
+                    {{ form.as_p }}
+                    <button class="btn btn-secondary">Delete Post</button>
 
 
-            </form>
+                </form>
+            </div>
         {% else %}
             <strong>You can't delete other's blog</strong>
         {% endif %}
