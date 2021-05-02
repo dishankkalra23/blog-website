@@ -21,7 +21,10 @@ type_1 = (
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'author', 'category', 'reading_type_professional', 'writer_type', 'body', 'header_image')
+        fields = (
+            'title', 'author', 'category', 'read_time', 'float_field', 'reading_type_professional', 'writer_type',
+            'body',
+            'header_image')
 
         # choice_list_1 = [('True', True), ('False', False)]
 
@@ -33,7 +36,8 @@ class PostForm(forms.ModelForm):
             'body': forms.Textarea(attrs={'class': 'form-control'}),
             'reading_type_professional': forms.RadioSelect(choices=choice_list_1),
             'writer_type': forms.CheckboxSelectMultiple(choices=type_1),
-            'FloatField': forms.FloatField()
+            'read_time': forms.NumberInput(),
+            'float_field': forms.NumberInput(),
 
         }
 

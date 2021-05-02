@@ -31,6 +31,7 @@ class Post(models.Model):
     # num_field = models.IntegerField(max_length=3)
     reading_type_professional = models.BooleanField(default=True)
     writer_type = models.TextField(null=True)
+    read_time = models.IntegerField(null=True)
     float_field = models.FloatField(null=True)
 
     def __str__(self):
